@@ -1,0 +1,8 @@
+{
+  "name": "@frctl/fractal-starter-default",
+  "license": "MIT",
+  "dependencies": {
+    "@frctl/fractal": "^2.0.0-beta.0",
+    "@frctl/fractal-preset-standard": "^2.0.0-beta.0"
+  }
+}
