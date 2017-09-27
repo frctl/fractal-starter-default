@@ -1,5 +1,6 @@
 {
-  "name": "@frctl/fractal-starter-default",
+  "name": "your-project-name",
+  "private": true,
   "license": "MIT",
   "dependencies": {
     "@frctl/fractal": "^2.0.0-beta.0",
