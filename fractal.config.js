@@ -1,7 +1,10 @@
 module.exports = {
 
   app: {
-    src: './lib'
+    src: './lib',
+    presets: [
+      '@frctl/fractal-preset-standard'
+    ]
   },
 
   pages: {
