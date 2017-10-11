@@ -1,14 +1,15 @@
 module.exports = {
 
   app: {
-    src: './lib',
-    presets: [
-      '@frctl/fractal-preset-standard'
-    ]
+    src: './lib'
   },
 
   pages: {
     src: './styleguide'
+  },
+
+  inspector: {
+
   }
 
 };
