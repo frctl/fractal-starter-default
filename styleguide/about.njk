@@ -1,0 +1,18 @@
+---
+id: about
+label: About
+title: Example page
+tags: [nav]
+position: 2
+permalink: about-this-site
+---
+
+{% extends "_layouts/default.njk" %}
+
+{% block content %}
+
+<h1 class="page__title">{{ page.title }}</h1>
+
+<p>You can have as many or as few pages as you like, either by adding template files (like this one) or by adding dynamic routes to your configuration file. </p>
+
+{% endblock %}

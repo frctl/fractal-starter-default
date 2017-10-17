@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="/assets/styleguide.css">
+
+  {# For example purposes only - you probably shouldn't do this in production! #}
+  {% for component in components.all() %}
+  {% for file in component.getFiles().filter('extname','.css').all() %}
+  <style>{{ file.contents }}</style>
+  {% endfor %}
+  {% endfor %}
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+</head>
+<body>
+
+  <div class="page">
+    <main class="content">
+    {% block content %}{% endblock %}
+    </main>
+
+    <div class="sidebar">
+
+      <a href="/" class="brand">{{ site.title }}</a>
+
+      <nav class="nav">
+        <ul class="nav__items">
+          {% for page in pages.filterByTag('nav').sortBy('position').all() %}
+          <li class="nav__item"><a href="{{ page.permalink }}">{{ page.label }}</a></li>
+          {% endfor %}
+        </ul>
+
+        <h4 class="nav__heading">Components</h4>
+        <ul class="nav__items">
+          {% for component in components.sortBy('label').all() %}
+          <li class="nav__item"><a href="{{ permalink('components', component) }}">{{ component.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  {# For example purposes only - you probably shouldn't do this in production! #}
+  {% for component in components.all() %}
+  {% for file in component.getFiles().filter('extname','.js').all() %}
+  <style>{{ file.contents }}</style>
+  {% endfor %}
+  {% endfor %}
+
+</body>
+</html>

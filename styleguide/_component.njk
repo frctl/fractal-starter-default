@@ -1,0 +1,36 @@
+---
+id: 'component-{component.id}'
+---
+
+{% extends "_layouts/default.njk" %}
+
+{% block content %}
+
+<h1 class="page__title">{{ component.label }}</h1>
+
+<p>This component has {{ component.getVariants().length }} variants.</p>
+
+{% asyncEach variant in component.getVariants().all() %}
+<div class="variant">
+  {% set scenario = variant.getScenarios().first() %}
+  {% set html = variant | render(scenario) %}
+
+  <h2>{{ variant.label }}</h2>
+
+  <h3>Preview</h3>
+
+  <div class="variant__preview">
+  {{ html | safe }}
+  </div>
+
+  <h3>Rendered HTML</h3>
+
+  <div class="code">
+    {{ html | highlight('html') | beautify | safe }}
+  </div>
+
+</div>
+
+{% endeach %}
+
+{% endblock %}

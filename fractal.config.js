@@ -1,3 +1,4 @@
+
 module.exports = {
 
   app: {
@@ -5,11 +6,24 @@ module.exports = {
   },
 
   pages: {
-    src: './styleguide'
+    src: './styleguide',
+    dest: './build',
+    site: {
+      title: 'Example Styleguide',
+    },
+    routes: {
+      components: {
+        collection: 'library.components',
+        template: '_component.njk',
+        permalink: 'components/{component.id}'
+      }
+    }
   },
 
   inspector: {
-
+    plugins:[
+      '@frctl/inspector-plugin-assets'
+    ]
   }
 
 };

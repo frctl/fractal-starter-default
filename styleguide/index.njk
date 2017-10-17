@@ -1,8 +1,17 @@
 ---
 id: homepage
-title: Fractal styleguide
+label: Overview
+title: Welcome!
+tags: [nav]
+position: 1
 ---
 
-<h1>{{ title }}</h1>
+{% extends "_layouts/default.njk" %}
 
-<p>This stylguide is included as part of the Fractal default starter project.</p>
+{% block content %}
+
+<h1 class="page__title">{{ page.title }}</h1>
+
+<p>This is a one example of the sort of documentation sites you can build using Fractal pages.</p>
+
+{% endblock %}
