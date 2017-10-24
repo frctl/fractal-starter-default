@@ -2,7 +2,11 @@
 module.exports = {
 
   app: {
-    src: './lib'
+    src: './components',
+    engines:[
+      '@frctl/fractal-engine-nunjucks'
+    ],
+    plugins:[],
   },
 
   pages: {
@@ -17,13 +21,9 @@ module.exports = {
         template: '_component.njk',
         permalink: 'components/{component.id}'
       }
-    }
+    },
   },
 
-  inspector: {
-    plugins:[
-      '@frctl/inspector-plugin-assets'
-    ]
-  }
+  inspector: {}
 
 };

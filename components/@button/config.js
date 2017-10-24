@@ -1,7 +1,5 @@
 module.exports = {
 
-  id: 'generic-button',
-
   label: 'Generic Button',
 
   variants: [
@@ -12,7 +10,10 @@ module.exports = {
         {
           label: 'English',
           context: {
-            text: 'Submit this form'
+            text: 'Submit this form',
+            ctx: {
+              text: 'yes'
+            }
           }
         },
         {

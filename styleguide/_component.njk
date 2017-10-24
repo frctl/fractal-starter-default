@@ -6,27 +6,31 @@ id: 'component-{component.id}'
 
 {% block content %}
 
+{% set numVariants = component.getVariants().length %}
+
 <h1 class="page__title">{{ component.label }}</h1>
 
-<p>This component has {{ component.getVariants().length }} variants.</p>
+<p>This component has {{ numVariants }} variant{{ '' if numVariants == 1 else 's' }}.</p>
 
 {% asyncEach variant in component.getVariants().all() %}
 <div class="variant">
   {% set scenario = variant.getScenarios().first() %}
   {% set html = variant | render(scenario) %}
 
-  <h2>{{ variant.label }}</h2>
+  <h2 class="variant__title">{{ variant.label }}</h2>
 
-  <h3>Preview</h3>
-
-  <div class="variant__preview">
-  {{ html | safe }}
+  <div class="variant__section">
+    <h3 class="variant__sectionTitle">Preview</h3>
+    <div class="variant__preview">
+    {{ html | safe }}
+    </div>
   </div>
 
-  <h3>Rendered HTML</h3>
-
-  <div class="code">
-    {{ html | highlight('html') | beautify | safe }}
+  <div class="variant__section">
+    <h3 class="variant__sectionTitle">Rendered HTML</h3>
+    <div class="code">
+      {{ html | beautify | highlight('html') | safe }}
+    </div>
   </div>
 
 </div>
