@@ -33,6 +33,13 @@ id: 'component-{component.id}'
     </div>
   </div>
 
+  <div class="variant__section">
+    <h3 class="variant__sectionTitle">Template</h3>
+    <div class="code">
+      {{ variant.getTemplate() | highlight('twig') | safe }}
+    </div>
+  </div>
+
 </div>
 
 {% endeach %}
