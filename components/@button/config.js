@@ -5,15 +5,14 @@ module.exports = {
   variants: [
     {
       id: 'primary',
-      classNames: ['button--primary'],
+      props: {
+        classNames: ['button--primary'],
+      },
       scenarios: [
         {
           label: 'English',
           context: {
-            text: 'Submit this form',
-            ctx: {
-              text: 'yes'
-            }
+            text: 'Submit this form'
           }
         },
         {
@@ -26,7 +25,9 @@ module.exports = {
     },
     {
       id: 'secondary',
-      classNames: ['button--secondary'],
+      props: {
+        classNames: ['button--secondary'],
+      },
       scenarios: [
         {
           label: 'English',
@@ -44,8 +45,10 @@ module.exports = {
     },
     {
       id: 'next',
-      classNames: ['button--next'],
-      next: true,
+      props: {
+        classNames: ['button--next'],
+        next: true,
+      },
       scenarios: [
         {
           label: 'English',
