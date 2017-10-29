@@ -6,7 +6,7 @@ module.exports = {
     engines:[
       '@frctl/fractal-engine-nunjucks'
     ],
-    plugins:[],
+    plugins:[]
   },
 
   pages: {
