@@ -5,5 +5,5 @@
 You can install this starter project via the Fractal CLI:
 
 ```
-fractal new DIRECTORY_NAME
+fractal-beta new DIRECTORY_NAME
 ```
