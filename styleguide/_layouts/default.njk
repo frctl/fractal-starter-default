@@ -47,7 +47,7 @@
   {# For example purposes only - you probably shouldn't do this in production! #}
   {% for component in components.all() %}
   {% for file in component.getFiles().filter('extname','.js').all() %}
-  <style>{{ file.contents }}</style>
+  <script>{{ file.contents }}</script>
   {% endfor %}
   {% endfor %}
 
